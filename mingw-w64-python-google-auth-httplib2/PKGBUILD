@@ -5,7 +5,7 @@ _realname=google-auth-httplib2
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=0.2.1
-pkgrel=1
+pkgrel=3
 pkgdesc="Google Authentication Library: httplib2 transport (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
@@ -15,6 +15,7 @@ msys2_references=(
   'purl: pkg:pypi/google-auth-httplib2'
 )
 url='https://github.com/googleapis/google-auth-library-python-httplib2'
+msys2_repository_url='https://github.com/googleapis/google-auth-library-python-httplib2'
 msys2_changelog_url='https://github.com/googleapis/google-auth-library-python-httplib2/blob/main/CHANGELOG.md'
 license=('spdx:Apache-2.0')
 depends=(

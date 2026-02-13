@@ -4,11 +4,12 @@ _realname=googleapis-common-protos
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=1.71.0
-pkgrel=1
+pkgrel=3
 pkgdesc='Python classes generated from the common protos in the googleapis repository (mingw-w64)'
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url='https://github.com/googleapis/google-cloud-python/tree/main/packages/googleapis-common-protos'
+msys2_repository_url='https://github.com/googleapis/google-cloud-python/tree/main/packages/googleapis-common-protos'
 msys2_changelog_url='https://github.com/googleapis/google-cloud-python/blob/main/packages/googleapis-common-protos/CHANGELOG.md'
 msys2_references=(
   'archlinux: python-googleapis-common-protos'

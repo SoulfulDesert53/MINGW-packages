@@ -4,11 +4,12 @@ _realname=pybox2d
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=2.3.10
-pkgrel=4
+pkgrel=6
 pkgdesc='Python wrapper for Box2D (mingw-w64)'
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64')
 url='https://github.com/pybox2d/pybox2d'
+msys2_repository_url='https://github.com/pybox2d/pybox2d'
 msys2_references=(
   'purl: pkg:pypi/box2d'
 )

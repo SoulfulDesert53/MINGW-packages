@@ -4,7 +4,7 @@ _realname=dnspython
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=2.8.0
-pkgrel=1
+pkgrel=3
 pkgdesc="A DNS toolkit for Python (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
@@ -12,6 +12,7 @@ url='https://www.dnspython.org/'
 msys2_repository_url="https://github.com/rthalley/dnspython"
 msys2_changelog_url='https://dnspython.readthedocs.io/en/stable/whatsnew.html'
 msys2_references=(
+  "cpe: cpe:/a:dnspython:dnspython"
   'anitya: 13190'
   'archlinux: python-dnspython'
   'gentoo: dev-python/dnspython'

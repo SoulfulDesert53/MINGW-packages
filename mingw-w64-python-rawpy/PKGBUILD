@@ -3,12 +3,13 @@
 _realname=rawpy
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
-pkgver=0.25.1
+pkgver=0.26.1
 pkgrel=1
 pkgdesc='RAW image processing for Python, a wrapper for libraw (mingw-w64)'
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url='https://github.com/letmaik/rawpy'
+msys2_repository_url='https://github.com/letmaik/rawpy'
 msys2_documentation_url='https://letmaik.github.io/rawpy/'
 msys2_references=(
   'aur: python-rawpy'
@@ -25,7 +26,7 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-python-build"
              "${MINGW_PACKAGE_PREFIX}-pkgconf"
              "${MINGW_PACKAGE_PREFIX}-cc")
 source=("${url}/archive/v${pkgver}/${_realname}-${pkgver}.tar.gz")
-sha256sums=('664d9d2d6c1692f1c129fc24ea9c430552f915853cd53ec76f5ad4d9b0a401f9')
+sha256sums=('9ed0023e6d52a0160813c502f54130f78e0cc3e50ea7e43edb90fe7e10f4a747')
 
 build() {
   cp -r "${_realname}-${pkgver}" "python-build-${MSYSTEM}" && cd "python-build-${MSYSTEM}"

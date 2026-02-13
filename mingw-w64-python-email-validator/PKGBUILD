@@ -4,7 +4,7 @@ _realname=email-validator
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=2.3.0
-pkgrel=1
+pkgrel=3
 pkgdesc="A robust email syntax and deliverability validation library for Python (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
@@ -14,6 +14,7 @@ msys2_references=(
   'purl: pkg:pypi/email-validator'
 )
 url='https://github.com/JoshData/python-email-validator'
+msys2_repository_url='https://github.com/JoshData/python-email-validator'
 msys2_changelog_url='https://github.com/JoshData/python-email-validator/blob/main/CHANGELOG.md'
 license=('spdx:Unlicense')
 depends=("${MINGW_PACKAGE_PREFIX}-python"

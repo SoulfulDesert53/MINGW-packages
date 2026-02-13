@@ -1,16 +1,17 @@
 _realname=qwen-code
 pkgbase=mingw-w64-${_realname}
 pkgname="${MINGW_PACKAGE_PREFIX}-${_realname}"
-pkgver=0.1.2
+pkgver=0.10.1
 pkgrel=1
 pkgdesc="A powerful command-line AI workflow tool adapted from Gemini CLI, specifically optimized for Qwen3-Coder models. (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url="https://github.com/QwenLM/qwen-code"
+msys2_repository_url='https://github.com/QwenLM/qwen-code'
 license=('Apache-2.0')
 depends=(${MINGW_PACKAGE_PREFIX}-nodejs)
 source=("https://registry.npmjs.org/@qwen-code/${_realname}/-/${_realname}-${pkgver}.tgz")
-sha256sums=('25ca6768565520c992373ea413c3bfd783d411f9f24d14018dd88a1f0baae7e7')
+sha256sums=('07d7d4c0a115fb53c356c63313e66a5d8844ac4f01aca6166a01ef5efabc65f5')
 noextract=("${_realname}-${pkgver}.tgz")
 msys2_references=(
   "aur: qwen-code"

@@ -3,7 +3,7 @@
 _realname=xpra
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
-pkgver=6.3.4
+pkgver=6.4.3
 pkgrel=1
 pkgdesc='Remote access client/server software (mingw-w64)'
 arch=('any')
@@ -13,6 +13,7 @@ msys2_references=(
   'purl: pkg:pypi/xpra'
 )
 url='https://github.com/Xpra-org/xpra'
+msys2_repository_url='https://github.com/Xpra-org/xpra'
 license=('spdx:GPL-2.0-or-later')
 depends=(
     ${MINGW_PACKAGE_PREFIX}-gtk3
@@ -61,7 +62,7 @@ makedepends=(
     ${MINGW_PACKAGE_PREFIX}-python-setuptools
     ${MINGW_PACKAGE_PREFIX}-python-gobject)
 source=("https://pypi.org/packages/source/${_realname::1}/${_realname}/${_realname}-${pkgver}.tar.gz")
-sha256sums=('690f17939ea9f5e3433453187b15871c40df38aaf496a5c32a5e6630bd2a4c4a')
+sha256sums=('fecee2881c51facc2b22a33eb924b4186ec307e2c34defe93e157e379f9a44e1')
 
 prepare() {
   cd "${_realname}-${pkgver}"

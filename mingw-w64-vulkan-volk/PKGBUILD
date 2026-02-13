@@ -3,12 +3,13 @@
 _realname=volk
 pkgbase=mingw-w64-vulkan-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-vulkan-${_realname}")
-pkgver=1.4.328.1
+pkgver=1.4.341.0
 pkgrel=1
 pkgdesc="Meta loader for Vulkan API (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url='https://github.com/zeux/volk'
+msys2_repository_url='https://github.com/zeux/volk'
 msys2_references=(
   'archlinux: volk'
 )
@@ -23,7 +24,7 @@ makedepends=(
   "${MINGW_PACKAGE_PREFIX}-ninja"
 )
 source=("https://github.com/zeux/volk/archive/refs/tags/vulkan-sdk-${pkgver}.tar.gz")
-sha256sums=('8d6a4092d5de62d0c6290394cf81cf7a99e36875934b1b75d595e76d08fcadd1')
+sha256sums=('42df539c70ffdaea259e317aef73524512f4093f6f4dafb36fa6cf2680c823b9')
 
 build() {
   declare -a extra_config

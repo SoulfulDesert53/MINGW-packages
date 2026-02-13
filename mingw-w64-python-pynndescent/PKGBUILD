@@ -4,11 +4,12 @@ _realname=pynndescent
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=0.5.13
-pkgrel=3
+pkgrel=5
 pkgdesc='Nearest Neighbor Descent (mingw-w64)'
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url="https://github.com/lmcinnes/pynndescent"
+msys2_repository_url='https://github.com/lmcinnes/pynndescent'
 msys2_references=(
   'aur: python-pynndescent'
   'purl: pkg:pypi/pynndescent'

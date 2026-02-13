@@ -4,7 +4,7 @@ _realname=pylsqpack
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=0.3.23
-pkgrel=1
+pkgrel=3
 pkgdesc="Python bindings for ls-qpack (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
@@ -14,6 +14,7 @@ msys2_references=(
   'purl: pkg:pypi/pylsqpack'
 )
 url='https://github.com/aiortc/pylsqpack'
+msys2_repository_url='https://github.com/aiortc/pylsqpack'
 license=('spdx:BSD-3-Clause')
 depends=("${MINGW_PACKAGE_PREFIX}-python")
 makedepends=("${MINGW_PACKAGE_PREFIX}-python-build"

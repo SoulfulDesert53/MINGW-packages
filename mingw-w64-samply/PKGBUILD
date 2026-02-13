@@ -9,6 +9,7 @@ pkgdesc="Command-line sampling profiler for macOS, Linux, and Windows (mingw-w64
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url="https://github.com/mstange/samply"
+msys2_repository_url='https://github.com/mstange/samply'
 license=("spdx:Apache-2.0 OR MIT")
 makedepends=(
   "${MINGW_PACKAGE_PREFIX}-rust"
@@ -19,7 +20,7 @@ sha256sums=('7002789471f8ef3a36f4d4db7be98f2847724e2b81a53c5e23d5cae022fb704b')
 prepare() {
   mv "${_realname}-${_realname}-v${pkgver}" "${_realname}-${pkgver}"
   cd "${_realname}-${pkgver}/${_realname}"
-  cargo fetch --target "$(rustc -vV | sed -n 's/host: //p')" --locked
+  cargo fetch --target "${RUST_CHOST}" --locked
 }
 
 build() {

@@ -4,7 +4,7 @@ _realname=fastjsonschema
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=2.21.2
-pkgrel=1
+pkgrel=3
 pkgdesc='Fast JSON schema validator for Python (mingw-w64)'
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64' 'mingw32')
@@ -15,6 +15,7 @@ msys2_references=(
   'purl: pkg:pypi/fastjsonschema'
 )
 url='https://github.com/horejsek/python-fastjsonschema'
+msys2_repository_url='https://github.com/horejsek/python-fastjsonschema'
 msys2_changelog_url='https://github.com/horejsek/python-fastjsonschema/blob/master/CHANGELOG.txt'
 license=('spdx:BSD-3-Clause')
 depends=("${MINGW_PACKAGE_PREFIX}-python")

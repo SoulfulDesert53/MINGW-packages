@@ -4,7 +4,7 @@ _realname=aioquic
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=1.3.0
-pkgrel=1
+pkgrel=4
 pkgdesc="QUIC and HTTP/3 implementation in Python (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
@@ -14,6 +14,7 @@ msys2_references=(
   'purl: pkg:pypi/aioquic'
 )
 url='https://github.com/aiortc/aioquic'
+msys2_repository_url='https://github.com/aiortc/aioquic'
 msys2_changelog_url='https://aioquic.readthedocs.io/en/latest/changelog.html'
 license=('spdx:BSD-3-Clause')
 depends=(

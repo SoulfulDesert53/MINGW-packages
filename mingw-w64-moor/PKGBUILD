@@ -3,12 +3,13 @@
 _realname=moor
 pkgbase=mingw-w64-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}")
-pkgver=2.7.1
+pkgver=2.10.4
 pkgrel=1
 pkgdesc='Terminal pager program (mingw-w64)'
 arch=('any')
 mingw_arch=('ucrt64' 'clang64' 'clangarm64')
 url='https://github.com/walles/moor'
+msys2_repository_url='https://github.com/walles/moor'
 msys2_references=(
   'anitya: 283347'
   'aur: moor'
@@ -22,7 +23,7 @@ conflicts=("${MINGW_PACKAGE_PREFIX}-moar")
 replaces=("${MINGW_PACKAGE_PREFIX}-moar")
 options=('!strip')
 source=("https://github.com/walles/moor/archive/v${pkgver}/${_realname}-${pkgver}.tar.gz")
-sha256sums=('2b9a26b7000a92778802138b92bfe6134723e2c72ba1829ca7da04efd314620a')
+sha256sums=('fde26cb32a3845eb290bd260f2f2240550c15601fae1ded9a4dc293925761ffa')
 
 build() {
     export GOOS=windows

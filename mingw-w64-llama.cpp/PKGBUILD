@@ -4,12 +4,13 @@ _realname=llama.cpp
 pkgbase=mingw-w64-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}")
 epoch=1
-pkgver=b6904
+pkgver=b7972
 pkgrel=1
 pkgdesc="Library and tools for running inference with Meta's LLaMA model (and derivatives) in C/C++ (mingw-w64)"
 arch=('any')
 mingw_arch=('ucrt64' 'clang64' 'clangarm64' 'mingw64')
 url="https://github.com/ggml-org/llama.cpp"
+msys2_repository_url='https://github.com/ggml-org/llama.cpp'
 license=('spdx:MIT')
 depends=(
   "${MINGW_PACKAGE_PREFIX}-cc-libs"
@@ -23,11 +24,13 @@ makedepends=(
   "${MINGW_PACKAGE_PREFIX}-ninja"
 )
 source=("https://github.com/ggml-org/llama.cpp/archive/${pkgver}/${_realname}-${pkgver}.tar.gz")
-sha256sums=('b0a32d8dd439fdda590527fa14e61361048cf14e9826c78843baf41bcdc9955b')
+sha256sums=('8c2fa5dab9339a36d344a37a8426c343acd8b799fa2f5d826bb71c14d5896a13')
+
+prepare() {
+  cd ${_realname}-${pkgver}
+}
 
 build() {
-  mkdir -p "${srcdir}/build-${MSYSTEM}" && cd "${srcdir}/build-${MSYSTEM}"
-
   declare -a extra_config
   if check_option "debug" "n"; then
     extra_config+=("-DCMAKE_BUILD_TYPE=Release")
@@ -45,18 +48,16 @@ build() {
       -DLLAMA_BUILD_EXAMPLES=ON \
       -DLLAMA_ALL_WARNINGS=OFF \
       -DLLAMA_BUILD_TESTS=OFF \
-      -DLLAMA_CURL=ON \
       -DLLAMA_OPENSSL=ON \
       -DLLAMA_USE_SYSTEM_GGML=ON \
-      ../${_realname}-${pkgver}
+      -S ${_realname}-${pkgver} \
+      -B build-${MSYSTEM}
 
-  cmake --build .
+  cmake --build build-${MSYSTEM}
 }
 
 package() {
-  cd "${srcdir}/build-${MSYSTEM}"
-
-  DESTDIR="${pkgdir}" cmake --install .
+  DESTDIR="${pkgdir}" cmake --install build-${MSYSTEM}
 
   # Rename output files by prefixing them with llama (if not already prefixed and if not DLL)
   for i in "${pkgdir}"${MINGW_PREFIX}/bin/*.{exe,py}; do

@@ -4,7 +4,7 @@ _realname=pytest-rerunfailures
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=16.1
-pkgrel=1
+pkgrel=3
 pkgdesc="a pytest plugin that re-runs failed tests up to -n times to eliminate flakey failures (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
@@ -14,6 +14,7 @@ msys2_references=(
   'purl: pkg:pypi/pytest-rerunfailures'
 )
 url='https://github.com/pytest-dev/pytest-rerunfailures'
+msys2_repository_url='https://github.com/pytest-dev/pytest-rerunfailures'
 msys2_changelog_url='https://pytest-rerunfailures.readthedocs.io/latest/changelog.html'
 license=('spdx:MPL-2.0')
 depends=(

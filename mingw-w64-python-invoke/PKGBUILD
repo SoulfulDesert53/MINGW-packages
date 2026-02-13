@@ -4,7 +4,7 @@ _realname=invoke
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=2.2.1
-pkgrel=1
+pkgrel=3
 pkgdesc="Pythonic task execution (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64' 'clangarm64')
@@ -13,6 +13,7 @@ msys2_references=(
   'purl: pkg:pypi/invoke'
 )
 url="https://github.com/pyinvoke/invoke"
+msys2_repository_url='https://github.com/pyinvoke/invoke'
 msys2_changelog_url='https://www.pyinvoke.org/changelog.html'
 license=('spdx:BSD-2-Clause')
 depends=("${MINGW_PACKAGE_PREFIX}-python")

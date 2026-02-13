@@ -3,12 +3,13 @@
 _realname=ggml
 pkgbase=mingw-w64-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}")
-pkgver=0.9.4.r137.g09aa7583
+pkgver=0.9.6.r42.g5cecdad6
 pkgrel=1
 pkgdesc="Tensor library for machine learning (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url="https://github.com/ggml-org/ggml"
+msys2_repository_url='https://github.com/ggml-org/ggml'
 license=('spdx:MIT')
 depends=(
   "${MINGW_PACKAGE_PREFIX}-cc-libs"
@@ -27,9 +28,9 @@ makedepends=(
   "${MINGW_PACKAGE_PREFIX}-vulkan-headers"
   "git"
 )
-_commit="09aa758381718f7731c148238574a7e169001f13"
+_commit="5cecdad692d868e28dbd2f7c468504770108f30c"
 source=("git+https://github.com/ggml-org/ggml.git#commit=${_commit}")
-sha256sums=('233f888d6c0ef1a7eb41b170a91f65670cdc4b1b524fed1beb532df8c3ecee16')
+sha256sums=('fd03fa835eabcdb08bd88abeeb55d4b8d72e91eb9f78ea33c93be8ede8ec6ea1')
 
 pkgver() {
   cd "${_realname}"
@@ -54,7 +55,6 @@ build() {
       -DCMAKE_INSTALL_PREFIX="${MINGW_PREFIX}" \
       "${extra_config[@]}" \
       -DBUILD_SHARED_LIBS=ON \
-      -DCMAKE_DLL_NAME_WITH_SOVERSION=ON \
       -DGGML_RPC=ON \
       -DGGML_BLAS=ON \
       -DGGML_BLAS_VENDOR=OpenBLAS \

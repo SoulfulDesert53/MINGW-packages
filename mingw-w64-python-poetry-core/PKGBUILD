@@ -3,7 +3,7 @@
 _realname=poetry-core
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
-pkgver=2.2.1
+pkgver=2.3.1
 pkgrel=1
 pkgdesc="Poetry PEP 517 Build Backend (mingw-w64)"
 arch=('any')
@@ -21,7 +21,7 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-python-build"
 checkdepends=("${MINGW_PACKAGE_PREFIX}-python-pytest-mock"
               "${MINGW_PACKAGE_PREFIX}-python-pytest")
 source=("https://pypi.org/packages/source/${_realname::1}/${_realname}/${_realname/-/_}-${pkgver}.tar.gz")
-sha256sums=('97e50d8593c8729d3f49364b428583e044087ee3def1e010c6496db76bd65ac5')
+sha256sums=('96f791d5d7d4e040f3983d76779425cf9532690e2756a24fd5ca0f86af19ef82')
 
 build() {
   cp -r "${_realname/-/_}-${pkgver}" "python-build-${MSYSTEM}" && cd "python-build-${MSYSTEM}"

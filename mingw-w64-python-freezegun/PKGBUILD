@@ -4,11 +4,12 @@ _realname=freezegun
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=1.5.5
-pkgrel=1
+pkgrel=3
 pkgdesc="Let your Python tests travel through time (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url='https://github.com/spulec/freezegun'
+msys2_repository_url='https://github.com/spulec/freezegun'
 msys2_changelog_url="https://github.com/spulec/freezegun/blob/master/CHANGELOG"
 msys2_references=(
   'anitya: 6183'

@@ -3,12 +3,13 @@
 _realname=aws-c-s3
 pkgbase=mingw-w64-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}")
-pkgver=0.9.2
+pkgver=0.11.5
 pkgrel=1
 pkgdesc='C99 library implementation for communicating with the S3 service, designed for maximizing throughput on high bandwidth EC2 instances (mingw-w64)'
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url='https://github.com/awslabs/aws-c-s3'
+msys2_repository_url='https://github.com/awslabs/aws-c-s3'
 msys2_references=(
   'archlinux: aws-c-s3'
 )
@@ -20,7 +21,7 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-cc"
              "${MINGW_PACKAGE_PREFIX}-cmake"
              "${MINGW_PACKAGE_PREFIX}-ninja")
 source=("https://github.com/awslabs/aws-c-s3/archive/v${pkgver}/${_realname}-${pkgver}.tar.gz")
-sha256sums=('70ddd1e69fed7788ff5499b03158f36fb8137d82bd7b1af7bcdf57facbdb1557')
+sha256sums=('bc76ad6e4ef40703477cd2e411553b85216def71a0073cfe8b7fad8d3728b37c')
 
 build() {
   declare -a _extra_config

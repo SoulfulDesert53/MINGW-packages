@@ -4,7 +4,7 @@ _basename=leptos
 _realname=cargo-${_basename}
 pkgbase=mingw-w64-${_realname}
 pkgname="${MINGW_PACKAGE_PREFIX}-${_realname}"
-pkgver=0.2.47
+pkgver=0.3.4
 pkgrel=1
 pkgdesc='Build tool for Leptos (mingw-w64)'
 arch=('any')
@@ -18,18 +18,18 @@ msys2_references=(
 license=('spdx:MIT')
 depends=("${MINGW_PACKAGE_PREFIX}-binaryen"
          "${MINGW_PACKAGE_PREFIX}-cargo-generate"
+         "${MINGW_PACKAGE_PREFIX}-rust"
          "${MINGW_PACKAGE_PREFIX}-rust-wasm")
 makedepends=("${MINGW_PACKAGE_PREFIX}-lld"
-             "${MINGW_PACKAGE_PREFIX}-rust"
              "${MINGW_PACKAGE_PREFIX}-pkgconf"
              "${MINGW_PACKAGE_PREFIX}-openssl")
 source=("${msys2_repository_url}/archive/v${pkgver}/${_realname}-${pkgver}.tar.gz")
-sha256sums=('ada691f4c0ae5a37994c8b2815791807287f36ff010d20889029b517c734431e')
+sha256sums=('18834ff5de7af988b6bc2268361123c84d62d5287d8038c7eb8d3e5a091ad8ff')
 
 prepare() {
   cd "${srcdir}/${_realname}-${pkgver}"
 
-  "${MINGW_PREFIX}/bin/cargo.exe" fetch --target "$(rustc -vV | sed -n 's/host: //p')"
+  "${MINGW_PREFIX}/bin/cargo.exe" fetch --target "${RUST_CHOST}"
 }
 
 build() {

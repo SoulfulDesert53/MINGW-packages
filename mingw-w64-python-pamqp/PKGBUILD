@@ -4,11 +4,12 @@ _realname=pamqp
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=3.3.0
-pkgrel=1
+pkgrel=3
 pkgdesc="RabbitMQ Focused AMQP low-level library (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url='https://github.com/gmr/pamqp'
+msys2_repository_url='https://github.com/gmr/pamqp'
 msys2_references=(
   'aur: python-pamqp'
   'purl: pkg:pypi/pamqp'

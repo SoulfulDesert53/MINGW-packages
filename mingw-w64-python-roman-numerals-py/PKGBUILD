@@ -4,7 +4,7 @@ _realname=roman-numerals-py
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=3.1.0
-pkgrel=1
+pkgrel=3
 pkgdesc="Manipulate well-formed Roman numerals (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64' 'clangarm64')
@@ -12,6 +12,7 @@ msys2_references=(
   'purl: pkg:pypi/roman-numerals-py'
 )
 url='https://github.com/AA-Turner/roman-numerals/tree/master/python'
+msys2_repository_url='https://github.com/AA-Turner/roman-numerals/tree/master/python'
 license=('spdx:0BSD OR CC0-1.0')
 depends=("${MINGW_PACKAGE_PREFIX}-python")
 makedepends=("${MINGW_PACKAGE_PREFIX}-python-build"

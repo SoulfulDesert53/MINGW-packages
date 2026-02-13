@@ -4,7 +4,7 @@ _realname=resolvelib
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=1.2.1
-pkgrel=1
+pkgrel=3
 pkgdesc="Resolve abstract dependencies into concrete ones (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
@@ -15,6 +15,7 @@ msys2_references=(
 )
 license=('spdx:ISC')
 url="https://github.com/sarugaku/resolvelib"
+msys2_repository_url='https://github.com/sarugaku/resolvelib'
 depends=("${MINGW_PACKAGE_PREFIX}-python")
 makedepends=(
   "${MINGW_PACKAGE_PREFIX}-python-build"

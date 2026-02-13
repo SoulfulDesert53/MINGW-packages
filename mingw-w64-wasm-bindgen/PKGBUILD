@@ -2,14 +2,15 @@
 
 _realname=wasm-bindgen
 pkgbase=mingw-w64-${_realname}
-pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}"
-         "${MINGW_PACKAGE_PREFIX}-${_realname}-docs")
-pkgver=0.2.104
-pkgrel=1
+pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}")
+         #"${MINGW_PACKAGE_PREFIX}-${_realname}-docs")
+pkgver=0.2.108
+pkgrel=2
 pkgdesc="Facilitating high-level interactions between Wasm modules and JavaScript (mingw-w64)"
 arch=('any')
 mingw_arch=('ucrt64' 'clang64' 'clangarm64')
 url='https://github.com/rustwasm/wasm-bindgen'
+msys2_repository_url='https://github.com/rustwasm/wasm-bindgen'
 msys2_references=(
   'purl: pkg:cargo/wasm-bindgen'
 )
@@ -20,8 +21,8 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-mdbook"
              'git')
 source=("git+${url}.git#tag=${pkgver}"
         "Cargo.lock")
-sha256sums=('4333b76d261b1320887576412abc3375b8405674355518f88275e7d38a006f3d'
-            '75f807ae511a3540c5e346dc0f1ec16a81e364cad3cfefafa570189f52e0364d')
+sha256sums=('d42c4f5ab61af7556c154d850087191f9c42d234b2c3ec8e6f73e53a35001b69'
+            '8f156fabfbbcf075dd717e0125acafcedc66d8317d4a9f93820e37c5e39901f7')
 
 prepare() {
   cd "${_realname}"
@@ -33,7 +34,7 @@ prepare() {
 
   cargo fetch --locked \
     --config='net.git-fetch-with-cli=true' \
-    --target "$(rustc -vV | sed -n 's/host: //p')"
+    --target "${RUST_CHOST}"
 }
 
 build() {
@@ -41,8 +42,8 @@ build() {
 
   cargo build --release --frozen -p wasm-bindgen-cli
 
-  cd guide
-  mdbook build
+  # cd guide
+  # mdbook build
 }
 
 check() {
@@ -64,13 +65,13 @@ package_wasm-bindgen() {
   install -Dm644 LICENSE-{APACHE,MIT} -t "${pkgdir}${MINGW_PREFIX}/share/licenses/${_realname}/"
 }
 
-package_wasm-bindgen-docs() {
-  pkgdesc+=" (Documentation)"
-  depends=()
+# package_wasm-bindgen-docs() {
+#   pkgdesc+=" (Documentation)"
+#   depends=()
 
-  install -d "${pkgdir}${MINGW_PREFIX}/share/doc/${_realname}/html/"
-  cp -r -t "${pkgdir}${MINGW_PREFIX}/share/doc/${_realname}/html/" "${_realname}"/guide/book/html/*
-}
+#   install -d "${pkgdir}${MINGW_PREFIX}/share/doc/${_realname}/html/"
+#   cp -r -t "${pkgdir}${MINGW_PREFIX}/share/doc/${_realname}/html/" "${_realname}"/guide/book/html/*
+# }
 
 # vim: set ft=bash :
 

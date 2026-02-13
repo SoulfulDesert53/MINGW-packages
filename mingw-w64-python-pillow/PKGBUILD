@@ -3,12 +3,13 @@
 _realname=pillow
 pkgbase=mingw-w64-python-pillow
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-pillow")
-pkgver=12.0.0
-pkgrel=2
+pkgver=12.1.1
+pkgrel=1
 pkgdesc="Python Imaging Library (PIL) fork Python3 version (mingw-w64)"
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url="https://github.com/python-pillow/Pillow/"
+msys2_repository_url='https://github.com/python-pillow/Pillow'
 msys2_references=(
   'purl: pkg:pypi/pillow'
   "cpe: cpe:/a:python:pillow"
@@ -31,19 +32,13 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-python-build"
              "${MINGW_PACKAGE_PREFIX}-cc"
              "${MINGW_PACKAGE_PREFIX}-tk")
 optdepends=("${MINGW_PACKAGE_PREFIX}-tk: for the ImageTK module")
-source=("https://pypi.org/packages/source/${_realname::1}/${_realname}/${_realname}-${pkgver}.tar.gz"
-        "0001-Revert-build-Mode.c-as-a-common-library.patch")
-sha256sums=('87d4f8125c9988bfbed67af47dd7a953e2fc7b0cc1e7800ec6d2080d490bb353'
-            'af97ebd6fa6ec30f7bcdff84b2bce6ef5ad44d7b58f15a91cfdf794ad4bd235c')
+source=("https://pypi.org/packages/source/${_realname::1}/${_realname}/${_realname}-${pkgver}.tar.gz")
+sha256sums=('9ad8fa5937ab05218e2b6a4cff30295ad35afd2f83ac592e68c0d871bb0fdbc4')
 
 prepare() {
   rm -rf "python-build-${MSYSTEM}" | true
   cp -r "${_realname}-${pkgver}" "python-build-${MSYSTEM}"
   cd "python-build-${MSYSTEM}"
-
-  # Revert of https://github.com/python-pillow/Pillow/commit/28adda9299daac9cd4ee349474d7618c16152d2d
-  # See https://github.com/msys2/MINGW-packages/issues/26007
-  patch -p1 -i "${srcdir}/0001-Revert-build-Mode.c-as-a-common-library.patch"
 }
 
 build() {

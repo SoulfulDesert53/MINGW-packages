@@ -4,7 +4,7 @@ _realname=attrs
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
 pkgver=25.4.0
-pkgrel=1
+pkgrel=3
 pkgdesc='Attributes without boilerplate (mingw-w64)'
 arch=('any')
 mingw_arch=('mingw64' 'ucrt64' 'clang64' 'clangarm64')
@@ -12,6 +12,7 @@ url='https://www.attrs.org/'
 msys2_repository_url='https://github.com/python-attrs/attrs'
 msys2_changelog_url='https://www.attrs.org/en/stable/changelog.html'
 msys2_references=(
+  "cpe: cpe:/a:attrs_project:attrs"
   'archlinux: python-attrs'
   'gentoo: dev-python/attrs'
   'purl: pkg:pypi/attrs'

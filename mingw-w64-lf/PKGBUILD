@@ -5,12 +5,13 @@
 _realname=lf
 pkgbase=mingw-w64-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}")
-pkgver=38
+pkgver=41
 pkgrel=1
 pkgdesc='A terminal file manager inspired by ranger'
 arch=('any')
 mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64' 'clangarm64')
 url='https://github.com/gokcehan/lf'
+msys2_repository_url='https://github.com/gokcehan/lf'
 msys2_changelog_url='https://github.com/gokcehan/lf/blob/master/CHANGELOG.md'
 msys2_references=(
   'anitya: 269016'
@@ -20,8 +21,8 @@ msys2_references=(
 license=('MIT')
 makedepends=('git' "${MINGW_PACKAGE_PREFIX}-go" "${MINGW_PACKAGE_PREFIX}-cc")
 source=("$pkgname::git+$url#tag=r$pkgver")
-sha512sums=('f945054b40d6a522d4430eae24280acbb8c1185d2f063970fccc6f088757cf4052fc54945bf471979e3a86ef6cf3a9cd3a59a4c103c31f9388bc72a7020935e2')
-b2sums=('017317b995551f7db73cde99008453e278e615788f0b6000921a9965aed9e506c040c08b827908ccc44469330bbf4a7630bae9061a192849733ae4b52021e330')
+sha512sums=('6aa0b99895d5f13f352fbcf4f51dd716ae271ee9f68b0c00772a7dc2673f415f52214e1cafc22fea75a7269079dbbc376d7c5f91a468b094f8a115194ff1ac92')
+b2sums=('670f60d2721ab2960eaa2636649a3b7fdb6a8a919787d951a731f565267a7c5ad92438fa28e161e538c3bf7068845e69f9d46bef5cb8b3d0936e7ea980a4b752')
 
 pkgver() {
   cd "$pkgname"
